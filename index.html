@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>声景记忆 · 人工评测</title>
+  <meta name="description" content="双耳空间音频记忆人工评测">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header><a href="./" class="brand"><span>◉</span> 声景记忆 <small>LISTENING LAB</small></a><b>HUMAN EVALUATION · 01</b></header>
+<main>
+  <section id="intro" class="landing">
+    <div class="hero"><p class="eyebrow">SPATIAL AUDIO MEMORY BENCHMARK</p><h1>听见方向，<br>记住声音。</h1><p class="lead">戴上耳机，走进一段有位置、有先后的声音。<br>帮助我们了解人类如何记住复杂声景。</p><div class="numbers"><span><strong>39</strong>道听音题</span><span><strong>13</strong>类记忆任务</span><span><strong>60–75</strong>分钟 · 可续答</span></div><p class="note">前、后、左、右均以你的头部朝向为参照。关闭系统“单声道音频”，确认耳机左右佩戴正确，调至舒适音量。</p></div>
+    <div class="card entry"><p class="eyebrow">开始之前</p><h2>准备好聆听了吗？</h2><label>参与昵称<input id="nickname" maxlength="40" placeholder="无需真实姓名"></label><label class="check"><input id="headphones" type="checkbox">我正在使用双声道耳机，且左右佩戴正确</label><label class="check"><input id="consent" type="checkbox">同意记录昵称、作答、正确率、播放次数与用时，用于本研究的人工评测</label><p class="muted">每题保存后会写入研究后台；使用同一浏览器可以继续。正式提交后不能修改，过程中不显示正确答案。</p><button id="show-examples" class="primary">进入音色熟悉 →</button></div>
+  </section>
+  <section id="familiar" class="card familiar hidden"><p class="eyebrow">音色熟悉</p><h2>先把名称和声音对应起来</h2><p>请把每种示例至少播放一次。示例来自本次评测的实际素材，不包含方向答案。</p><div id="examples" class="examples"></div><button id="start" class="primary">开始正式评测 →</button></section>
+  <section id="complete" class="card complete hidden"><span class="success">✓</span><h1>谢谢你的聆听。</h1><p>39 道题已提交，研究者可以查看你的作答与正确率。</p><p class="muted">为避免影响后续参与者，此处不展示标准答案。</p><p>参与编号：<code id="participant-code"></code></p></section>
+  <section id="workspace" class="workspace hidden"><aside><p class="eyebrow">你的进度</p><h2><span id="done">0</span><small> / 39 已保存</small></h2><div class="progress"><i id="bar"></i></div><p class="muted" id="resume-note"></p><div id="nav" class="grid"></div><p class="muted">紫色：当前题 · 绿色：已保存<br>切题前请保存当前答案。</p><button id="finish" class="secondary">正式提交全部答案</button></aside><article class="card question"><div class="question-top"><span id="number" class="eyebrow"></span><span id="duration" class="pill"></span></div><h2 id="question"></h2><details><summary>查看原始英文题目</summary><p id="english"></p></details><div class="player"><div class="wave" aria-hidden="true"></div><audio id="audio" controls preload="metadata"></audio><p>可以重听。请保持耳机方向与播放音量不变。</p></div><div id="choices" class="options"></div><div class="actions"><button id="save" class="secondary">保存答案</button><button id="next" class="primary">保存并继续 →</button></div><p class="muted">“不确定”会单独记录，并按未答对计入准确率。</p></article></section>
+  <div id="message" role="alert" class="message hidden"></div>
+</main>
+<footer><span>Spatial Audio Memory · Human Study</span><a href="./admin.html">研究者后台 ↗</a></footer>
+<script src="./app.js" defer></script>
+</body></html>
